@@ -41,8 +41,6 @@ A **Server-Side Rendered (SSR) social networking platform** built using the Node
 ### ⚡ Dynamic Templating
 
 * Server-side rendering using EJS (Embedded JavaScript)
-* Fast and SEO-friendly content delivery
-
 ---
 
 ## 🛠️ Tech Stack
