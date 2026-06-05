@@ -1,6 +1,6 @@
 # 🌐 Social Sphere SSR
 
-A highly responsive, **Server-Side Rendered (SSR) social networking application** built with the Node.js ecosystem. This platform emphasizes secure session handling, relational-style document referencing, and dynamic server-side templating to deliver a seamless social media experience.
+**Server-Side Rendered (SSR) social networking application** built with the Node.js ecosystem. This platform emphasizes secure session handling, relational-style document referencing, and dynamic server-side templating to deliver a seamless social media experience.
 
 ---
 
@@ -120,58 +120,6 @@ Social-sphere-ssr/
 
 ---
 
-## 🗄️ Database Schemas
-
-The application implements a relational document structure utilizing Mongoose's `ObjectId` reference model.
-
-### 1. User Schema (`models/user.js`)
-```javascript
-const userSchema = mongoose.Schema({
-    username: String,
-    name: String,
-    age: Number,
-    email: String,
-    password: String, // Stored as Bcrypt Hash
-    profilepic: {
-        type: String,
-        default: "default.png"
-    },
-    posts: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "post"
-        }
-    ],
-    bioContent: {
-        type: String, 
-        default: ""
-    }
-});
-```
-
-### 2. Post Schema (`models/post.js`)
-```javascript
-const postSchema = mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user"
-    },
-    date: {
-        type: Date,
-        default: Date.now()
-    },
-    content: String,
-    likes: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "user"
-        }
-    ],
-    bio: Boolean
-});
-```
-
----
 
 ## 🔌 API Endpoints & Routes
 
